@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" src="//cdn.jsdelivr.net/combine/npm/purecss@2.0.3/build/base-min.css,npm/purecss@2.0.3/build/grids-min.css,npm/purecss@2.0.3/build/forms-min.css" />
-    
+    <link rel="stylesheet"
+        src="//cdn.jsdelivr.net/combine/npm/purecss@2.0.3/build/base-min.css,npm/purecss@2.0.3/build/grids-min.css,npm/purecss@2.0.3/build/forms-min.css" />
+
     <link rel="stylesheet" href="./Assets/css/style.css">
-    <link rel="stylesheet" href="./Assets/css/reset.css">
+    <link rel="stylesheet" href="./Assets/css/normalize.css">
 
 
     <script src="https://kit.fontawesome.com/83700c5516.js" crossorigin="anonymous"></script>
@@ -19,14 +20,21 @@
 
 <body>
     <div container>
+        <header>
+            <img src="Assets/images/smilin-potate.png" id="potato" alt="smiling potato">
+            <h1>ToT-tunes</h1>
+            <h5>Songs on the tip of your tongue</h5>
+        </header>
         <div class="row" id="lyricsInputDiv">
             <input type="text" id="lyricsInput">
             <button class="pure-button pure-button-active" id="seach-button">Search</button>
             <!-- <div id="lyricsResults"></div> make a div in the js to addend to the lyricsInputDiv-->
         </div>
         <div class="row" id="randomSong">
-            <button class="pure-button pure-button-active" id="random-song-button"><i class="icon fas fa-music"></i>&nbsp;Random Song&nbsp;<i class="icon fab fa-spotify"></i></button>
-       </div>
+            <button class="pure-button pure-button-active" id="random-song-button"><i
+                    class="icon fas fa-music"></i>&nbsp;Spudify&nbsp;<i class="icon fab fa-spotify"></i></button>
+            <div></div>
+        </div>
         <!-- <div id="potatoes"></div> -->
         <!-- <div id="saveButton"></div> -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
