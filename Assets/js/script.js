@@ -142,7 +142,7 @@ $(document).ready(function(){
     console.log(newRandomSong);
 
 
-=======
+
 // //Random song Generator
  
 var CLIENTID = "vPFP_u36FIQ7Czwl_B4HRmaNTOnGIisC9SlJxKZtxukqJaglGFkXumkOzUerC9Zh";
@@ -225,7 +225,7 @@ function randomSong(){
 console.log(randomSong);
 console.log(newRandomSong);
 
-})
+
 
 
 
