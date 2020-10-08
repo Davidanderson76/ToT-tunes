@@ -1,18 +1,51 @@
 
 //Lyric search
 $(document).ready(function(){
-    var lyrics = "American idiot";
+
+
+
+
+    $("#search-button").on("click", function(event) {
+    event.preventDefault();
+
+    
+    //VARIABLES
+    var lyrics =     $("#lyricsInput").val().trim();
+
+
     var queryUrl = "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=" + lyrics + "&page_size=10&page=1&s_track_rating=desc&apikey=3810df36308c6384072e9fa2a9a3bde3";
     
 
-
+    //CALLING API
     $.ajax({
         url: queryUrl,
         method: "GET",
     }).then (function(response){
+        response = JSON.parse(response);
         console.log(response);
+
+        //Pulling info from object to be displayed
+        // document.getElementById("lyricsResults").innerHTML =
+        console.log(response.message.body.track_list[0].track.artist_name);
+        response.message.body.track_list[0].track.artist_name
+        response.message.body.track_list[0].track.track_name;
+        response.message.body.track_list[0].track.album_name;
+
+        // document.getElementById("lyricsResults").innerHTML =
+        console.log(response.message.body.track_list[1].track.artist_name);
+        response.message.body.track_list[1].track.artist_name;
+        response.message.body.track_list[1].track.track_name;
+        response.message.body.track_list[1].track.album_name;
+
+        // document.getElementById("lyricsResults").innerHTML =
+        console.log(response.message.body.track_list[2].track.artist_name);
+        response.message.body.track_list[2].track.artist_name
+        response.message.body.track_list[2].track.track_name;
+        response.message.body.track_list[2].track.album_name;
+
+        
+
     });
-})
 
 
 //Random song Generator
@@ -89,5 +122,11 @@ document.getElementById("releaseDate").innerHTML = "RELEASE DATE: "+song['releas
 $(document).ready(function() {
   randomSong(); //Using this instead of newRandomSong, because I want to start with the same song every time 
 });
+<<<<<<< HEAD
 console.log(randomSong);
 console.log(newRandomSong);
+=======
+
+})
+
+>>>>>>> 5fe571a0e94f583d2a03ed404d8501e0d3678921
