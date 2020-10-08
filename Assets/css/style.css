@@ -1,7 +1,14 @@
-#potato{
-    max-width: 20%;
-}
 header {
+    margin: auto;
+    text-align: center;
+}
+.clearfix {
+    overflow: auto;
+}
+#potato{
+    min-width: 65px;
+    width: 23%;
+    max-width: 110px;
     float: left;
 }
 .row{

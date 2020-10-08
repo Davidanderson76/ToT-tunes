@@ -22,17 +22,16 @@
 
 <body>
     <div container>
-        <header>
-            <img src="Assets/images/smilin-potate.png" id="potato" alt="smiling potato">
-            <h1>ToT-tunes</h1>
-            <h5>Songs on the tip of your tongue</h5>
+        <header class="clearfix">
+            <h1 class="header">ToT-tunes<img src="Assets/images/smilin-potate.png" class="header" id="potato" alt="smiling potato"></h1>
+            <h2 class="header">Songs on the tip of your tongue</h2>
         </header>
-        <div class="row" id="lyricsInputDiv">
-            <input type="text" id="lyricsInput">
+        <div class="row" id="lyrics-input-div">
+            <input type="text" id="lyrics-input">
             <button class="pure-button pure-button-active" id="seach-button">Search</button>
             <!-- <div id="lyricsResults"></div> make a div in the js to addend to the lyricsInputDiv-->
         </div>
-        <div class="row" id="randomSong">
+        <div class="row" id="random-song">
             <button class="pure-button pure-button-active" id="random-song-button"><i
                     class="icon fas fa-music"></i>&nbsp;Spudify&nbsp;<i class="icon fab fa-spotify"></i></button>
             <div></div>
