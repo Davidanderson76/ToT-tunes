@@ -10,9 +10,9 @@ $(document).ready(function(){
 
     
     //VARIABLES
-    var lyrics =     $("#lyricsInput").val().trim();
+    var lyrics =     $("#lyrics-input").val().trim();
 
-
+console.log("#lyrics-input");
     var queryUrl = "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=" + lyrics + "&page_size=10&page=1&s_track_rating=desc&apikey=3810df36308c6384072e9fa2a9a3bde3";
     
 
@@ -72,7 +72,7 @@ xhr.onreadystatechange = function() {
   if (xhr.readyState === 4) {
     if (xhr.status === 200 || xhr.status === 304) {
       // Success! Do stuff with data.
-      //console.log(xhr.responseText); 
+      console.log(xhr.responseText); 
     }
   }
 };
@@ -80,8 +80,8 @@ xhr.open("GET", APISong+songID+accessToken, false);
 //xhr.open("GET", API+accessToken+ '&q=Kendrick%20Lamar', false);
 
 xhr.send(); 
-//console.log(xhr.status);
-//console.log(xhr.statusText);
+console.log(xhr.status);
+console.log(xhr.statusText);
 demo=xhr.response;
 
 var json = JSON.parse(demo);
@@ -122,6 +122,8 @@ document.getElementById("releaseDate").innerHTML = "RELEASE DATE: "+song['releas
 $(document).ready(function() {
   randomSong(); //Using this instead of newRandomSong, because I want to start with the same song every time 
 });
+console.log(randomSong);
+console.log(newRandomSong);
 
 })
-
+})
