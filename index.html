@@ -5,36 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://cdn.concisecss.com/concise.min.css">
+    <link rel="stylesheet" src="//cdn.jsdelivr.net/combine/npm/purecss@2.0.3/build/base-min.css,npm/purecss@2.0.3/build/grids-min.css,npm/purecss@2.0.3/build/forms-min.css" />
+    
     <link rel="stylesheet" href="./Assets/css/style.css">
     <link rel="stylesheet" href="./Assets/css/reset.css">
 
+
+    <script src="https://kit.fontawesome.com/83700c5516.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
 
     <title>ToT-tunes</title>
 </head>
 
 <body>
-    <div grid>
-        <div column>
-          <div class="card-box">
-            <img class="image tater-header" src="http://onebigphoto.com/uploads/2012/10/stunning-dolomites-mountains-italy.jpg">
-            <div class="card-content">
-              <h3 class="title">ToT-tunes</h3>
-              <p class="content">This is where we describe the page</p>
-            </div>
-          </div>
+    <div container>
+        <div class="row" id="lyricsInputDiv">
+            <input type="search" id="lyrics-input" onsearch="">
+            <button class="pure-button pure-button-active" id="seach-button">Search</button>
+            <div id="lyricsResults"></div> 
         </div>
-    <div id="lyricsInput"></div>
-    <button id="searchLyrics"></button>
-    <div id="lyricsResults"></div>
-    <div id="randomSong"></div>
-    <div id="songResults"></div>
-    <!-- <div id="potatoes"></div> -->
-    <!-- <div id="saveButton"></div> -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="Assets/js/script.js"></script>
+        <div class="row" id="randomSong">
+            <button class="pure-button pure-button-active" id="random-song-button"><i class="icon fas fa-music"></i>&nbsp;Random Song&nbsp;<i class="icon fab fa-spotify"></i></button>
+       </div>
+        <!-- <div id="potatoes"></div> -->
+        <!-- <div id="saveButton"></div> -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="Assets/js/script.js"></script>
+    </div>
 </body>
 
 </html>
