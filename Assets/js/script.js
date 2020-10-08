@@ -2,7 +2,9 @@
 //Lyric search
 $(document).ready(function(){
     $("#seach-button").on("click", function() {
-        $( ".display-results" ).empty();
+        $( ".display-results0" ).empty();
+        $( ".display-results1" ).empty();
+        $( ".display-results2" ).empty();
        
     //VARIABLES
     var lyrics = $("#lyrics-input").val().trim();                         
@@ -22,46 +24,72 @@ $(document).ready(function(){
         //Pulling info from object to be displayed
         // document.getElementById("lyricsResults").innerHTML =
         console.log(response.message.body.track_list[0].track.artist_name);
-        var artistName1 = response.message.body.track_list[0].track.artist_name
-        var trackName1 =response.message.body.track_list[0].track.track_name;
-        var albumName1 = response.message.body.track_list[0].track.album_name;
+        var artistName0 = response.message.body.track_list[0].track.artist_name
+        var trackName0 =response.message.body.track_list[0].track.track_name;
+        var albumName0 = response.message.body.track_list[0].track.album_name;
 
         // document.getElementById("lyricsResults").innerHTML =
         console.log(response.message.body.track_list[1].track.artist_name);
-        var artistName2 = response.message.body.track_list[1].track.artist_name;
-        var trackName2 = response.message.body.track_list[1].track.track_name;
-        var albumName2 = response.message.body.track_list[1].track.album_name;
+        var artistName1 = response.message.body.track_list[1].track.artist_name;
+        var trackName1 = response.message.body.track_list[1].track.track_name;
+        var albumName1 = response.message.body.track_list[1].track.album_name;
 
         // document.getElementById("lyricsResults").innerHTML =
         console.log(response.message.body.track_list[2].track.artist_name);
-        var artistName3 = response.message.body.track_list[2].track.artist_name
-        var trackName3 = response.message.body.track_list[2].track.track_name;
-        var albumName3 = response.message.body.track_list[2].track.album_name;
+        var artistName2 = response.message.body.track_list[2].track.artist_name
+        var trackName2 = response.message.body.track_list[2].track.track_name;
+        var albumName2 = response.message.body.track_list[2].track.album_name;
 
         //PUTTING THE INFO INTO THE DOM
-        var newDiv1 = $("<div>");
-            newDiv1.addClass("display-results")
+        var div0 = $("<div>");
+        div0.addClass("display display-results0");
+        $("#lyrics-results").append(div0);
+        
+        var artist0 = $("<p>");
+        $(artist0).append("Artist: ", artistName0);
+        $(div0).append(artist0);
 
-        $("#lyrics-input-div").append(newDiv1);
+        var track0 = $("<p>");
+        $(track0).append("Track Name: ", trackName0);
+        $(div0).append(track0);
+        
+        var album0 = $("<p>");
+        $(album0).append("Album Name: ", albumName0);
+        $(div0).append(album0);
+        
+        
+        var div1 = $("<div>");
+        div1.addClass("display display-results1");
+        $("#lyrics-results").append(div1);
 
-        $(newDiv1).append("Artist: ",artistName1, " Track Name: ", trackName1, " Album Name: ", albumName1);
+        var artist1 = $("<p>");
+        $(artist1).append("Artist: ", artistName1);
+        $(div1).append(artist1);
 
-        var newDiv2 = $("<div>");
-            newDiv2.addClass("display-results")
+        var track1 = $("<p>");
+        $(track1).append("Track Name: ", trackName1);
+        $(div1).append(track1);
+        
+        var album1 = $("<p>");
+        $(album1).append("Album Name: ", albumName1);
+        $(div1).append(album1);
+        
 
-        $("#lyrics-input-div").append(newDiv2);
+        var div2 = $("<div>");
+        div2.addClass("display display-results2");
+        $("#lyrics-results").append(div2);
 
-        $(newDiv2).append("Artist: ", artistName2, " Track Name: ",trackName2, " Album Name: ", albumName2);
-
-        var newDiv3 = $("<div>");
-            newDiv3.addClass("display-results")
-
-        $("#lyrics-input-div").append(newDiv3);
-
-        $(newDiv3).append("Artist: ",artistName3, " Track Name: ", trackName3, " Album Name: ",albumName3);
-
-
-
+        var artist2 = $("<p>");
+        $(artist2).append("Artist: ", artistName2);
+        $(div2).append(artist2);
+        
+        var track2 = $("<p>");
+        $(track2).append("Track Name: ", trackName2);
+        $(div2).append(track2);
+        
+        var album2 = $("<p>");
+        $(album2).append("Album Name: ", albumName2);
+        $(div2).append(album2);
     })})})
     
 
@@ -124,7 +152,7 @@ $(document).ready(function(){
       
       json = JSON.parse(demo);
       song = json['response']['song'];
-      document.getElementById("songImage").innerHTML = "<img src=\""+song['song_art_image_url']+"\"alt=\"Some Awesome Album Art\" style=\"width:200px;height:200px;\">";
+      document.getElementById("song-image").innerHTML = "<img src=\""+song['song_art_image_url']+"\"alt=\"Some Awesome Album Art\" style=\"width:200px;height:200px;\">";
       // I made these pixel values since I'd rather have overlap on a small screen than the image scaled too small 
      
     
