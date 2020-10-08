@@ -5,28 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" src="//cdn.jsdelivr.net/combine/npm/purecss@2.0.3/build/base-min.css,npm/purecss@2.0.3/build/grids-min.css,npm/purecss@2.0.3/build/forms-min.css" />
-    
+    <link rel="stylesheet"
+        src="//cdn.jsdelivr.net/combine/npm/purecss@2.0.3/build/base-min.css,npm/purecss@2.0.3/build/grids-min.css,npm/purecss@2.0.3/build/forms-min.css" />
+
     <link rel="stylesheet" href="./Assets/css/style.css">
-    <link rel="stylesheet" href="./Assets/css/reset.css">
+    <link rel="stylesheet" href="./Assets/css/normalize.css">
 
 
     <script src="https://kit.fontawesome.com/83700c5516.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
+    <script src="./Assets/js/script.js"></script>
+
 
     <title>ToT-tunes</title>
 </head>
 
 <body>
     <div container>
-        <div class="row" id="lyricsInputDiv">
-            <input type="search" id="lyrics-input" onsearch="">
+        <header class="clearfix">
+            <h1 class="header">ToT-tunes<img src="Assets/images/smilin-potate.png" class="header" id="potato" alt="smiling potato"></h1>
+            <h2 class="header">Songs on the tip of your tongue</h2>
+        </header>
+        <div class="row" id="lyrics-input-div">
+            <input type="text" id="lyrics-input">
             <button class="pure-button pure-button-active" id="seach-button">Search</button>
             <div id="lyricsResults"></div> 
         </div>
-        <div class="row" id="randomSong">
-            <button class="pure-button pure-button-active" id="random-song-button"><i class="icon fas fa-music"></i>&nbsp;Random Song&nbsp;<i class="icon fab fa-spotify"></i></button>
-       </div>
+        <div class="row" id="random-song">
+            <button class="pure-button pure-button-active" id="random-song-button"><i
+                    class="icon fas fa-music"></i>&nbsp;Spudify&nbsp;<i class="icon fab fa-spotify"></i></button>
+            <div></div>
+        </div>
+    <div id="lyricsInput"></div>
+    <button id="searchLyrics"></button>
+    <div id="lyricsResults"></div>
+    <div id="randomSong"></div>
+    <div id="songResults"></div>
+
+    <!-- Random song -->
+    <div class="row text-center">
+      <h3>Random Song Generator</h3>
+    </div>
+    <div class="row text-center">
+      <div class="col-xs-6 text-center" id="songImage"></div>
+      <div class="col-xs-6 text-right">
+        <p id="song"></p>
+        <p id="artist"></p>
+        <p id="releaseDate"></p>
+        <button class="button" onclick + "newRandomSong()"><span>Random Song</span></button>
+      </div>
+    </div>
+    <!-- <div id="potatoes"></div> -->
+    <!-- <div id="saveButton"></div> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="Assets/js/script.js"></script>
         <!-- <div id="potatoes"></div> -->
         <!-- <div id="saveButton"></div> -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
