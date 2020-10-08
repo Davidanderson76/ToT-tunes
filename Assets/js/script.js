@@ -137,22 +137,14 @@ function randomSong(){
   
 // document.getElementById("artist").innerHTML = "ARTIST: <a target=\"_blank\"  href="+song['primary_artist']['url']+">"+song['primary_artist']['name'].toUpperCase()+"</a>";
 // document.getElementById("releaseDate").innerHTML = "RELEASE DATE: "+song['release_date'];
-// }
+// 
+}
 
-<<<<<<< HEAD
-// //GETTING STARTED // 
-// $(document).ready(function() {
-//   randomSong(); //Using this instead of newRandomSong, because I want to start with the same song every time 
-// });
-=======
 //GETTING STARTED // 
 $(document).ready(function() {
   newRandomSong(); //Using this instead of newRandomSong, because I want to start with the same song every time 
 });
 console.log(randomSong);
 console.log(newRandomSong);
->>>>>>> b165e73239ce41f1e422cc30f2f619f1421cf27d
-
-});
 
 });
