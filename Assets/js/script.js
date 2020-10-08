@@ -2,26 +2,19 @@
 //Lyric search
 $(document).ready(function(){
 
-
-
-
     $("#search-button").on("click", function(event) {
-    event.preventDefault();
+     
+        var lyrics = $("#lyrics-input").val().trim();
+        var queryUrl = "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=" + lyrics + "&page_size=10&page=1&s_track_rating=desc&apikey=3810df36308c6384072e9fa2a9a3bde3";
 
+        console.log("#lyrics-input");
     
-    //VARIABLES
-    var lyrics =     $("#lyrics-input").val().trim();
-    
-
-console.log("#lyrics-input");
-    var queryUrl = "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=" + lyrics + "&page_size=10&page=1&s_track_rating=desc&apikey=3810df36308c6384072e9fa2a9a3bde3";
-    
-
     //CALLING API
     $.ajax({
         url: queryUrl,
         method: "GET",
-    }).then (function(response){
+    })
+    .then (function(response){
         response = JSON.parse(response);
         console.log(response);
 
@@ -47,23 +40,23 @@ console.log("#lyrics-input");
         //PUTTING THE INFO INTO THE DOM
         var newDiv1 = $("<div>");
 
-        $("#lyricsInputDiv").append(newDiv1);
+        $("#lyrics-input-div").append(newDiv1);
 
         $(newDiv1).append("Artist: ",artistName1, " Track Name: ", trackName1, " Album Name: ", albumName1);
 
         var newDiv2 = $("<div>");
 
-        $("#lyricsInputDiv").append(newDiv2);
+        $("#lyrics-input-div").append(newDiv2);
 
         $(newDiv2).append("Artist: ", artistName2, " Track Name: ",trackName2, " Album Name: ", albumName2);
 
         var newDiv3 = $("<div>");
 
-        $("#lyricsInputDiv").append(newDiv3);
+        $("#lyrics-input-div").append(newDiv3);
 
         $(newDiv3).append("Artist: ",artistName3, " Track Name: ", trackName3, " Album Name: ",albumName3);
 
-
+       event.preventDefault();
     })})
 
     
@@ -86,24 +79,25 @@ var maxSong= 2471960;
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+  $.ajax({
+    url: API,
+    method:"GET",
+  }).then(function(response){
+    var result = response.data;
 
-//https://api.genius.com/search?q=Kendrick%20Lamar
-var xhr = new XMLHttpRequest(); //XML HTTP Request
-xhr.onreadystatechange = function() {
-  if (xhr.readyState === 4) {
-    if (xhr.status === 200 || xhr.status === 304) {
+    result.onreadystatechange = function() {
+  if (result.readyState === 4) {
+    if (result.status === 200 || result.status === 304) {
       // Success! Do stuff with data.
-      console.log(xhr.responseText); 
+      console.log(result.responseText); 
     }
   }
 };
-xhr.open("GET", APISong+songID+accessToken, false);
-//xhr.open("GET", API+accessToken+ '&q=Kendrick%20Lamar', false);
+result.open("GET", APISong+songID+accessToken, false);
 
-xhr.send(); 
-console.log(xhr.status);
-console.log(xhr.statusText);
-demo=xhr.response;
+console.log(result.status);
+console.log(result.statusText);
+demo=result.response;
 
 var json = JSON.parse(demo);
 var song = json['response']['song'];
@@ -115,16 +109,18 @@ function newRandomSong() {
 }
 
 function randomSong(){
-  xhr.open("GET", APISong+songID+accessToken, false);
-  xhr.send(); 
-  demo=xhr.response;
+  result.open("GET", APISong+songID+accessToken, false);
+  result.send(); 
+  demo=result.response;
   
-//   while (xhr.status===404){ //Checks if the Random Song Exists
-//       songID =getRandomInt(1,maxSong);
-//       xhr.open("GET", APISong+songID+accessToken, false);
-//       xhr.send(); 
-//       demo=xhr.response;
-//   }
+
+  while (result.status===404){ //Checks if the Random Song Exists
+      songID =getRandomInt(1,maxSong);
+      result.open("GET", APISong+songID+accessToken, false);
+      result.send(); 
+      demo=result.response;
+  }
+
   
 //   json = JSON.parse(demo);
 //   song = json['response']['song'];
@@ -141,10 +137,13 @@ function randomSong(){
 }
 
 //GETTING STARTED // 
-$(document).ready(function() {
-  newRandomSong(); //Using this instead of newRandomSong, because I want to start with the same song every time 
+
+ newRandomSong();
 });
+
 console.log(randomSong);
 console.log(newRandomSong);
 
-});
+})
+
+
