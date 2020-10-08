@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,7 +21,7 @@
     <script src="./Assets/js/script.js"></script>
 
 
-    <title>ToT-tunes</title>
+    <title>ToT-Tunes</title>
 </head>
 
 <body>
@@ -30,44 +31,43 @@
                     alt="smiling potato"></h1>
             <h2 class="header">Songs on the tip of your tongue</h2>
         </header>
+
         <div class="row" id="lyrics-input-div">
             <input type="text" id="lyrics-input">
             <button class="pure-button pure-button-active" id="seach-button">Search</button>
             <div id="lyricsResults"></div> 
         </div>
-        <div class="row" id="random-song">
-            <button class="pure-button pure-button-active" id="random-song-button"><i
-                    class="icon fas fa-music"></i>&nbsp;Spudify</button>
-            <div></div>
-        </div>
-    <div id="lyricsInput"></div>
-    <button id="searchLyrics"></button>
-    <div id="lyricsResults"></div>
-    <div id="randomSong"></div>
-    <div id="songResults"></div>
 
-    <!-- Random song -->
-    <div class="row text-center">
-      <h3>Random Song Generator</h3>
-    </div>
-    <div class="row text-center">
-      <div class="col-xs-6 text-center" id="songImage"></div>
-      <div class="col-xs-6 text-right">
-        <p id="song"></p>
-        <p id="artist"></p>
-        <p id="releaseDate"></p>
-        <button class="button" onclick + "newRandomSong()"><span>Random Song</span></button>
-      </div>
-    </div>
-    <!-- <div id="potatoes"></div> -->
-    <!-- <div id="saveButton"></div> -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="Assets/js/script.js"></script>
-        <!-- <div id="potatoes"></div> -->
-        <!-- <div id="saveButton"></div> -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <div class="row" id="random-song">
+
+            <button class="pure-button pure-button-active" id="random-song-button">
+                <i class="icon fas fa-music"></i>&nbsp;Spudify&nbsp;<i class="icon fab fa-spotify"></i>
+            </button>
+        </div>
+        <div id="lyricsInput"></div>
+        <button id="searchLyrics"></button>
+        <div id="lyricsResults"></div>
+        <div id="randomSong"></div>
+        <div id="songResults"></div>
+
+
+        <!-- Random song -->
+        <div class="row text-center">
+            <h3>Random Song Generator</h3>
+        </div>
+        <div class="row text-center">
+            <div class="col-xs-6 text-center" id="songImage"></div>
+            <div class="col-xs-6 text-right">
+                <p id="song"></p>
+                <p id="artist"></p>
+                <p id="releaseDate"></p>
+                <button class="button" onclick + "newRandomSong()"><span>Random Song</span></button>
+            </div>
+        </div>
+            <!-- <div id="potatoes"></div> -->
+            <!-- <div id="saveButton"></div> -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="Assets/js/script.js"></script>
     </div>
 </body>
