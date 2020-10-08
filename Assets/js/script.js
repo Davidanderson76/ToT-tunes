@@ -106,7 +106,7 @@ console.log(xhr.statusText);
 demo=xhr.response;
 
 var json = JSON.parse(demo);
-var song = json['response']['song'];
+// var song = json['response']['song'];
 
 
 function newRandomSong() {
