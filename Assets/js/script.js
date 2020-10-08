@@ -39,7 +39,7 @@ xhr.onreadystatechange = function() {
   if (xhr.readyState === 4) {
     if (xhr.status === 200 || xhr.status === 304) {
       // Success! Do stuff with data.
-      //console.log(xhr.responseText); 
+      console.log(xhr.responseText); 
     }
   }
 };
@@ -47,8 +47,8 @@ xhr.open("GET", APISong+songID+accessToken, false);
 //xhr.open("GET", API+accessToken+ '&q=Kendrick%20Lamar', false);
 
 xhr.send(); 
-//console.log(xhr.status);
-//console.log(xhr.statusText);
+console.log(xhr.status);
+console.log(xhr.statusText);
 demo=xhr.response;
 
 var json = JSON.parse(demo);
@@ -89,3 +89,5 @@ document.getElementById("releaseDate").innerHTML = "RELEASE DATE: "+song['releas
 $(document).ready(function() {
   randomSong(); //Using this instead of newRandomSong, because I want to start with the same song every time 
 });
+console.log(randomSong);
+console.log(newRandomSong);
