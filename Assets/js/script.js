@@ -10,9 +10,9 @@ $(document).ready(function(){
 
     
     //VARIABLES
-    var lyrics =     $("#lyricsInput").val().trim();
+    var lyrics =     $("#lyrics-input").val().trim();
 
-
+console.log("#lyrics-input");
     var queryUrl = "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=" + lyrics + "&page_size=10&page=1&s_track_rating=desc&apikey=3810df36308c6384072e9fa2a9a3bde3";
     
 
@@ -122,11 +122,8 @@ document.getElementById("releaseDate").innerHTML = "RELEASE DATE: "+song['releas
 $(document).ready(function() {
   randomSong(); //Using this instead of newRandomSong, because I want to start with the same song every time 
 });
-<<<<<<< HEAD
 console.log(randomSong);
 console.log(newRandomSong);
-=======
 
 })
-
->>>>>>> 5fe571a0e94f583d2a03ed404d8501e0d3678921
+})
