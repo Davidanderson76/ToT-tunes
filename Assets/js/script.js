@@ -13,7 +13,8 @@ $(document).ready(function(){
     $.ajax({
         url: queryUrl,
         method: "GET",
-    }).then (function(response){
+    })
+    .then (function(response){
         response = JSON.parse(response);
         console.log(response);
 
@@ -137,6 +138,7 @@ $(document).ready(function(){
     
     console.log(randomSong);
     console.log(newRandomSong);
+
 
 
 
