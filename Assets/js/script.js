@@ -11,6 +11,7 @@ $(document).ready(function(){
     
     //VARIABLES
     var lyrics =     $("#lyrics-input").val().trim();
+    
 
 console.log("#lyrics-input");
     var queryUrl = "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=" + lyrics + "&page_size=10&page=1&s_track_rating=desc&apikey=3810df36308c6384072e9fa2a9a3bde3";
@@ -50,9 +51,9 @@ console.log("#lyrics-input");
 
 //Random song Generator
  
-var CLIENTID = "Eq8KSecb2Yz4Lq--EUjuGWH_8OifHCRwdwHr1ztKdLx5Qk_zCZG--AXPSQzMXhL-";
-var CLIENTSECRET = "-3Ynmxt9BZab3Qs5sbr_GdzGxXoGqSqbSISFuEQwquYeVm-5-A3nFIcgUOvDSY731GT-hhJtvTK5jYDccT7juQ";
-var accessToken= "?access_token=CXyFeSBw2lAdG41xkuU3LS6a_nwyxwwCz2dCkUohw-rw0C49x2HqP__6_4is5RPx";
+var CLIENTID = "vPFP_u36FIQ7Czwl_B4HRmaNTOnGIisC9SlJxKZtxukqJaglGFkXumkOzUerC9Zh";
+var CLIENTSECRET = "ojOMG__TmTvQBP6SkuKAp2BEtAMGnq0x4nkQqNJnDg4g33dd9YrcqZqzsxYsrcOAaytMhZpSOXM10Td4dKA4gA";
+var accessToken= "6eec9ipaKO7qvMCQwowP0lVc4JALwJSbNh3GWBS_xQIig6QraQqnoU33Fk7CiTgt";
 var API = "https://api.genius.com/search";
 var APISong = "https://api.genius.com/songs/";
 var songID = "2471960";
@@ -120,7 +121,7 @@ document.getElementById("releaseDate").innerHTML = "RELEASE DATE: "+song['releas
 
 //GETTING STARTED // 
 $(document).ready(function() {
-  randomSong(); //Using this instead of newRandomSong, because I want to start with the same song every time 
+  newRandomSong(); //Using this instead of newRandomSong, because I want to start with the same song every time 
 });
 console.log(randomSong);
 console.log(newRandomSong);
