@@ -69,7 +69,7 @@ console.log("#lyrics-input");
     
 
 
-//Random song Generator
+// //Random song Generator
  
 var CLIENTID = "vPFP_u36FIQ7Czwl_B4HRmaNTOnGIisC9SlJxKZtxukqJaglGFkXumkOzUerC9Zh";
 var CLIENTSECRET = "ojOMG__TmTvQBP6SkuKAp2BEtAMGnq0x4nkQqNJnDg4g33dd9YrcqZqzsxYsrcOAaytMhZpSOXM10Td4dKA4gA";
@@ -119,24 +119,25 @@ function randomSong(){
   xhr.send(); 
   demo=xhr.response;
   
-  while (xhr.status===404){ //Checks if the Random Song Exists
-      songID =getRandomInt(1,maxSong);
-      xhr.open("GET", APISong+songID+accessToken, false);
-      xhr.send(); 
-      demo=xhr.response;
-  }
+//   while (xhr.status===404){ //Checks if the Random Song Exists
+//       songID =getRandomInt(1,maxSong);
+//       xhr.open("GET", APISong+songID+accessToken, false);
+//       xhr.send(); 
+//       demo=xhr.response;
+//   }
   
-  json = JSON.parse(demo);
-  song = json['response']['song'];
-  document.getElementById("songImage").innerHTML = "<img src=\""+song['song_art_image_url']+"\"alt=\"Some Awesome Album Art\" style=\"width:200px;height:200px;\">";
-  // I made these pixel values since I'd rather have overlap on a small screen than the image scaled too small 
+//   json = JSON.parse(demo);
+//   song = json['response']['song'];
+//   document.getElementById("songImage").innerHTML = "<img src=\""+song['song_art_image_url']+"\"alt=\"Some Awesome Album Art\" style=\"width:200px;height:200px;\">";
+//   // I made these pixel values since I'd rather have overlap on a small screen than the image scaled too small 
  
 
-//document.getElementById("song").innerHTML = "SONG: <a href="+song['url']+" >"+song['title'].toUpperCase()+"</a>";
-document.getElementById("song").innerHTML = "SONG: <a target=\"_blank\" href="+song['url']+" >"+song['title'].toUpperCase()+"</a>";
+// //document.getElementById("song").innerHTML = "SONG: <a href="+song['url']+" >"+song['title'].toUpperCase()+"</a>";
+// document.getElementById("song").innerHTML = "SONG: <a target=\"_blank\" href="+song['url']+" >"+song['title'].toUpperCase()+"</a>";
   
-document.getElementById("artist").innerHTML = "ARTIST: <a target=\"_blank\"  href="+song['primary_artist']['url']+">"+song['primary_artist']['name'].toUpperCase()+"</a>";
-document.getElementById("releaseDate").innerHTML = "RELEASE DATE: "+song['release_date'];
+// document.getElementById("artist").innerHTML = "ARTIST: <a target=\"_blank\"  href="+song['primary_artist']['url']+">"+song['primary_artist']['name'].toUpperCase()+"</a>";
+// document.getElementById("releaseDate").innerHTML = "RELEASE DATE: "+song['release_date'];
+// 
 }
 
 //GETTING STARTED // 
@@ -146,5 +147,4 @@ $(document).ready(function() {
 console.log(randomSong);
 console.log(newRandomSong);
 
-})
-
+});
