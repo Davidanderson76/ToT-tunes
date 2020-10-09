@@ -2,7 +2,7 @@
 //Lyric search
 $(document).ready(function(){
 
-    $("#search-button").on("click", function(event) {
+    $("button").on("click", function() {
      
         var lyrics = $("#lyrics-input").val().trim();
         var queryUrl = "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=" + lyrics + "&page_size=10&page=1&s_track_rating=desc&apikey=3810df36308c6384072e9fa2a9a3bde3";
@@ -56,28 +56,27 @@ $(document).ready(function(){
 
         $(newDiv3).append("Artist: ",artistName3, " Track Name: ", trackName3, " Album Name: ",albumName3);
 
-       event.preventDefault();
+    
     })})
-
+})
     
 
-
+$(document).ready(function(){
 //Random song Generator
- 
-var CLIENTID = "vPFP_u36FIQ7Czwl_B4HRmaNTOnGIisC9SlJxKZtxukqJaglGFkXumkOzUerC9Zh";
-var CLIENTSECRET = "ojOMG__TmTvQBP6SkuKAp2BEtAMGnq0x4nkQqNJnDg4g33dd9YrcqZqzsxYsrcOAaytMhZpSOXM10Td4dKA4gA";
-var accessToken= "6eec9ipaKO7qvMCQwowP0lVc4JALwJSbNh3GWBS_xQIig6QraQqnoU33Fk7CiTgt";
+ $("button").on("click", function(){
+
+  var CLIENTID = "Eq8KSecb2Yz4Lq--EUjuGWH_8OifHCRwdwHr1ztKdLx5Qk_zCZG--AXPSQzMXhL-";
+var CLIENTSECRET = "-3Ynmxt9BZab3Qs5sbr_GdzGxXoGqSqbSISFuEQwquYeVm-5-A3nFIcgUOvDSY731GT-hhJtvTK5jYDccT7juQ";
+var accessToken= "?access_token=CXyFeSBw2lAdG41xkuU3LS6a_nwyxwwCz2dCkUohw-rw0C49x2HqP__6_4is5RPx";
 var API = "https://api.genius.com/search";
 var APISong = "https://api.genius.com/songs/";
 var songID = "2471960";
 var maxSong= 2471960; 
 //Max song is 489579 for a fairly safe number. But 2 million songs 
 
-/**
- * Returns a random integer between min (inclusive) and max (inclusive)
- */
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+    
 }
   $.ajax({
     url: API,
@@ -89,14 +88,16 @@ function getRandomInt(min, max) {
   if (result.readyState === 4) {
     if (result.status === 200 || result.status === 304) {
       // Success! Do stuff with data.
-      console.log(result.responseText); 
+      console.log(result); 
+      console.log(result.onreadystatechange);
     }
   }
-};
+  
+
 result.open("GET", APISong+songID+accessToken, false);
 
 console.log(result.status);
-console.log(result.statusText);
+console.log(result.open);
 demo=result.response;
 
 var json = JSON.parse(demo);
@@ -127,18 +128,21 @@ function randomSong(){
  
 
 //document.getElementById("song").innerHTML = "SONG: <a href="+song['url']+" >"+song['title'].toUpperCase()+"</a>";
-document.getElementById("song").innerHTML = "SONG: <a target=\"_blank\" href="+song['url']+" >"+song['title'].toUpperCase()+"</a>";
+  document.getElementById("song").innerHTML = "SONG: <a target=\"_blank\" href="+song['url']+" >"+song['title'].toUpperCase()+"</a>";
   
-document.getElementById("artist").innerHTML = "ARTIST: <a target=\"_blank\"  href="+song['primary_artist']['url']+">"+song['primary_artist']['name'].toUpperCase()+"</a>";
-document.getElementById("releaseDate").innerHTML = "RELEASE DATE: "+song['release_date'];
+  document.getElementById("artist").innerHTML = "ARTIST: <a target=\"_blank\"  href="+song['primary_artist']['url']+">"+song['primary_artist']['name'].toUpperCase()+"</a>";
+  document.getElementById("releaseDate").innerHTML = "RELEASE DATE: "+song['release_date'];
 }
 
 //GETTING STARTED // 
 
- newRandomSong();
+
+};
 });
 
+ newRandomSong();
 console.log(randomSong);
 console.log(newRandomSong);
+})
 
 })
