@@ -162,10 +162,6 @@ $(document).ready(function(){
     document.getElementById("artist").innerHTML = "ARTIST: <a target=\"_blank\"  href="+song['primary_artist']['url']+">"+song['primary_artist']['name'].toUpperCase()+"</a>";
     document.getElementById("releaseDate").innerHTML = "RELEASE DATE: "+song['release_date'];
     }
-    function tweetSong(){
-      window.open('https://twitter.com/intent/tweet?hashtags=songs&text=Found a cool song today. "'+song['title']+'" by '+song['primary_artist']['name']);
-    
-    }
     
     //GETTING STARTED // 
     $(document).ready(function() {
