@@ -17,3 +17,6 @@ who use the specified lyrics input.
 Sometimes you get bored of the same old songs and playlists, which brings us to the second feature that ToT-Tunes has to offer, the "Spudify" 
 button. The "Spudify" feature allows the user to click on a fun button and have a random song pop up that they
 can then enjoy as they please. 
+
+DEMO:
+![ToT-tunes Demo](https://i.makeagif.com/media/10-09-2020/JtzGXn.gif)
