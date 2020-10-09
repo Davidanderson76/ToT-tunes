@@ -1,4 +1,14 @@
+* {
+    font-family: 'Permanent Marker', cursive;
+    box-sizing: border-box;
+}
+.container {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
 header {
+    width: 100%;
     margin: auto;
     text-align: center;
 }
@@ -17,6 +27,36 @@ header {
     margin-top: 3%;
     margin-bottom: 3%;
 }
+.display {
+    padding: 10px;
+    background-color: rgb(216, 185, 13);
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+}
+/* .display-results0 {
+   background-color: rgb(216, 185, 13);
+}
+.display-results1 {
+    background-color: rgb(153, 126, 7);
+}
+.display-results2 {
+    background-color: rgb(119, 102, 3); */
+/* } */
+#song-image{
+    padding: 10px;
+    background-color: rgb(153, 126, 7);
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+}
+#song-info{
+    padding: 10px;
+    background-color: rgb(216, 185, 13);
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+}
 .button {
     color: white;
     background-color: rgb(30,215,97);
@@ -24,3 +64,11 @@ header {
 .icon {
     color: black;
 }
+/* @media screen and (min-width: 400px) {
+    body{
+        border: 2px solid black;
+        width: 400px;
+        overflow: hidden;
+    }
+    
+} */
